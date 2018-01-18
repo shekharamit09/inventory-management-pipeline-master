@@ -5,7 +5,7 @@
 </a>
 
 This is an example implementation of a continuous delivery pipeline for a Pega application. This pipeline has the following workflow 
-- *Continuous Integration* by rules develoeprs by triggering a build pipeline on on merge of a rules branch. This will trigger the execution of PegaUnit test, specifically a smoke test suite, which if it passes, will merge the branch that triggered the build. After successful merge, the application, Inventory Management System, will be exported from the Dev system and published to a binary repository located in Artifactory.
+- *Continuous Integration* by rules developers by triggering a build pipeline on on merge of a rules branch. This will trigger the execution of PegaUnit test, specifically a smoke test suite, which if it passes, will merge the branch that triggered the build. After successful merge, the application, Inventory Management System, will be exported from the Dev system and published to a binary repository located in Artifactory.
 - *Continuous Delivery* - this is the section of the pipeline where the application archive stored in the repository from the earlier CI process is imported into a test environment for further regression and acceptance testing. In this example pipeline, this is represented by the "Regression Tests" stage.
 - *Continuous Deployment* - Here the pipeline will create a restore point in the application on the production environment prior to importing the application archive from the Artifactory repository. The production environment is expected to be configured with the appropriate production level settings.
 
@@ -35,7 +35,7 @@ In order for this pipeline to work in Jenkins, you need to configure a job in Je
 
 Make sure to install all the associated plugins suggested when installing the above plugins to ensure that all the functionality is available. There is plenty of information on the web on how to install and configure these plugins.
 
-This particular Jenkinsfile assumes that there area few global environment variables available, therefore make sure that the following environment variables are available under *Manage Jenkins --> Configure system* 
+This particular Jenkinsfile assumes that there are few global environment variables available, therefore make sure that the following environment variables are available under *Manage Jenkins --> Configure system* 
 - **ARTIFACTORY_URL**:  url to the artifactory installation 
 - **PEGA_DEV**: url to the Pega 7.3 installation for the dev environment
 - **PEGA_QA**: url to the Pega 7.3 installation for the qa environment
